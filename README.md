@@ -1,21 +1,23 @@
-```markdown
+
 # 🎲 Dice Roller Studio
 
-A professional, cross-platform dice simulator written in C++17. 
-This project goes beyond simple random number generation; it features a custom analytical engine capable of calculating and visualizing the exact probability mass function (PMF) for any combination of dice (e.g., `4d6 + 2d8 + 5`) using discrete convolution algorithms.
+A cross-platform dice simulator written in C++17. 
+This project goes beyond simple random number generation; it features a custom analytical engine capable of calculating and visualizing the exact probability mass function (PMF) for any combination of dice (e.g., `4d6 + 2d8 + 5`) using discrete convolution algorithms. 
 
-## ✨ Features
+The application is built with a strict Model-View architecture, ensuring a highly scalable and maintainable codebase.
+
+## Features
 
 * **Analytical Math Engine:** Real-time calculation of Expected Value (Mean), Standard Deviation, and the exact probability of every single outcome.
 * **Dynamic Pool Builder:** Add dice of any type and modifiers to create complex roll formulas.
 * **Graphical User Interface (GUI):** Fluid, responsive, full-screen UI built with Dear ImGui.
 * **Data Visualization:** Instant generation of the exact probability distribution chart (bell curve) using ImPlot.
-* **Clean Architecture:** Strict separation of concerns between business logic (Model) and graphics (View).
+* **Clean Architecture:** Strict separation of concerns (Model-View pattern). The UI logic is completely encapsulated within its own dedicated class.
 * **Included Test Suite:** Dedicated testing executable to validate mathematical accuracy and memory management.
 
 ---
 
-## 🛠️ Tech Stack
+## Tech Stack
 
 * **Language:** C++17
 * **Build System:** CMake
@@ -25,7 +27,7 @@ This project goes beyond simple random number generation; it features a custom a
 
 ---
 
-## 📦 Dependencies and Prerequisites
+## Dependencies and Prerequisites
 
 The project already includes the `ImGui` and `ImPlot` libraries internally (in the `external/` folder), so they do not require separate installation.
 
@@ -41,7 +43,7 @@ sudo apt install build-essential cmake libglfw3-dev libgl1-mesa-dev
 
 ---
 
-## 🚀 How to Build and Run
+## How to Build and Run
 
 The project uses CMake for a simple and standardized build process. Open the terminal in the project's root folder and run:
 
@@ -68,7 +70,7 @@ cmake --build build
 
 ---
 
-## 🧪 Running Tests
+## Running Tests
 
 The project includes a secondary executable that validates the robustness of the math engine (`DiceMath`) in isolation, without loading the GUI. To run the tests:
 
@@ -81,11 +83,12 @@ If the terminal outputs `SUCCESS!`, all probability distributions, expected valu
 
 ---
 
-## 📂 Code Structure
+## Code Structure
 
-* `src/math/` - Contains the logic and math engine (`DiceMath.h/cpp`). Completely agnostic of the platform and GUI.
-* `external/` - Contains third-party source files (Dear ImGui and ImPlot).
-* `main.cpp` - Handles the window lifecycle (GLFW), OpenGL initialization, and the graphic loop (View).
+* `src/math/` (**Model**): Contains the logic and math engine (`DiceMath.h/cpp`). Completely agnostic of the platform and GUI.
+* `src/gui/` (**View**): Contains the `DiceApp` class (`DiceApp.h/cpp`) which encapsulates the window lifecycle, UI state, and rendering logic.
+* `external/`: Contains third-party source files (Dear ImGui and ImPlot).
+* `main.cpp`: A minimal, clean entry point that simply initializes and runs the `DiceApp`.
 
 ```
 

@@ -9,8 +9,7 @@ set(CMAKE_CXX_STANDARD_REQUIRED ON)
 find_package(OpenGL REQUIRED)
 find_package(glfw3 REQUIRED)
 
-# --- 2. Definisci i file sorgente di Dear ImGui ---
-# (Stiamo dicendo a CMake di pescare questi file dalla cartella 'external' che hai creato)
+# 2. Definisci i file sorgente di Dear ImGui
 set(IMGUI_SOURCES
     external/imgui/imgui.cpp
     external/imgui/imgui_draw.cpp
@@ -20,11 +19,17 @@ set(IMGUI_SOURCES
     external/imgui/imgui_impl_opengl3.cpp
 )
 
-# --- 3. L'eseguibile principale (Logica + GUI) ---
-add_executable(DiceThrower main.cpp src/math/DiceMath.cpp ${IMGUI_SOURCES})
+# --- NUOVO: File sorgente di ImPlot ---
+set(IMPLOT_SOURCES
+    external/implot/implot.cpp
+    external/implot/implot_items.cpp
+)
 
-# Diciamo al compilatore dove trovare i file .h di ImGui per poterli includere nel main.cpp
-target_include_directories(DiceThrower PRIVATE external/imgui)
+# 3. L'eseguibile principale (Aggiungi ${IMPLOT_SOURCES})
+add_executable(DiceThrower main.cpp src/math/DiceMath.cpp src/gui/DiceApp.cpp ${IMGUI_SOURCES} ${IMPLOT_SOURCES})
+
+# Diciamo al compilatore dove trovare i file .h di ImGui E ImPlot!
+target_include_directories(DiceThrower PRIVATE external/imgui external/implot)
 
 # Colleghiamo le librerie grafiche del sistema al nostro programma
 target_link_libraries(DiceThrower PRIVATE glfw OpenGL::GL)

@@ -1,0 +1,31 @@
+# Directory di build di CMake
+build/
+out/
+bin/
+
+# File temporanei e configurazioni generate da CMake
+CMakeCache.txt
+CMakeFiles/
+CMakeScripts/
+Makefile
+cmake_install.cmake
+install_manifest.txt
+compile_commands.json
+
+# File oggetto e binari compilati
+*.o
+*.obj
+*.exe
+*.out
+*.a
+*.so
+*.dylib
+DiceThrower
+TestDiceThrower
+
+# Configurazioni locali di VS Code
+.vscode/
+
+# File spazzatura dei sistemi operativi
+.DS_Store
+Thumbs.db

@@ -75,14 +75,14 @@ DicePool::DicePool() : modifier(0) {}
 
 void DicePool::addDices(int quantity, int faces) {
     if (quantity > 0 && faces > 1) {
-        // Cerca se esiste già un gruppo con le stesse facce
+        // Looks for groups with same faces
         for (auto& group : groups) {
             if (group.faces == faces) {
-                group.quantity += quantity; // Unisce i dadi!
-                return; // Esce dalla funzione
+                group.quantity += quantity; // Merge dices
+                return;
             }
         }
-        // Se non lo ha trovato, aggiunge un nuovo gruppo
+        // If there isn't a group with the same faces it adds it to the list of groups
         groups.push_back({quantity, faces});
     }
 }
@@ -165,26 +165,25 @@ Distribution DicePool::getExactDistribution() const {
 // DICEPOOL METHODS - Pool name 
 // ============================================================================
 std::string DicePool::getFormulaText() const {
-    if (groups.empty() && modifier == 0) return "Vuoto";
+    if (groups.empty() && modifier == 0) return "Empty";
 
     std::string formula = "";
     bool first = true;
 
-    // Cicla tutti i dadi e costruisce la stringa (es. "2d6 + 1d8")
+    // Cycle in the groups and gives a name (ex. "2d6 + 1d8")
     for (const auto& group : groups) {
         if (!first) formula += " + ";
         formula += std::to_string(group.quantity) + "d" + std::to_string(group.faces);
         first = false;
     }
 
-    // Aggiunge il modificatore se presente
+    // Add modifier
     if (modifier > 0) {
         if (!first) formula += " + ";
         formula += std::to_string(modifier);
     } else if (modifier < 0) {
         if (!first) formula += " - ";
         else formula += "-";
-        // Uso -modifier per evitare di stampare " + -3" o "- -3"
         formula += std::to_string(-modifier);
     }
 

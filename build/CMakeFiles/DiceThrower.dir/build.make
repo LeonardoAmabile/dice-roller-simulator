@@ -97,10 +97,24 @@ CMakeFiles/DiceThrower.dir/src/math/DiceMath.cpp.s: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green "Compiling CXX source to assembly CMakeFiles/DiceThrower.dir/src/math/DiceMath.cpp.s"
 	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /home/leonardo/Scrivania/dice-roller-simulator/src/math/DiceMath.cpp -o CMakeFiles/DiceThrower.dir/src/math/DiceMath.cpp.s
 
+CMakeFiles/DiceThrower.dir/src/gui/DiceApp.cpp.o: CMakeFiles/DiceThrower.dir/flags.make
+CMakeFiles/DiceThrower.dir/src/gui/DiceApp.cpp.o: /home/leonardo/Scrivania/dice-roller-simulator/src/gui/DiceApp.cpp
+CMakeFiles/DiceThrower.dir/src/gui/DiceApp.cpp.o: CMakeFiles/DiceThrower.dir/compiler_depend.ts
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=/home/leonardo/Scrivania/dice-roller-simulator/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_3) "Building CXX object CMakeFiles/DiceThrower.dir/src/gui/DiceApp.cpp.o"
+	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -MD -MT CMakeFiles/DiceThrower.dir/src/gui/DiceApp.cpp.o -MF CMakeFiles/DiceThrower.dir/src/gui/DiceApp.cpp.o.d -o CMakeFiles/DiceThrower.dir/src/gui/DiceApp.cpp.o -c /home/leonardo/Scrivania/dice-roller-simulator/src/gui/DiceApp.cpp
+
+CMakeFiles/DiceThrower.dir/src/gui/DiceApp.cpp.i: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green "Preprocessing CXX source to CMakeFiles/DiceThrower.dir/src/gui/DiceApp.cpp.i"
+	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /home/leonardo/Scrivania/dice-roller-simulator/src/gui/DiceApp.cpp > CMakeFiles/DiceThrower.dir/src/gui/DiceApp.cpp.i
+
+CMakeFiles/DiceThrower.dir/src/gui/DiceApp.cpp.s: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green "Compiling CXX source to assembly CMakeFiles/DiceThrower.dir/src/gui/DiceApp.cpp.s"
+	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /home/leonardo/Scrivania/dice-roller-simulator/src/gui/DiceApp.cpp -o CMakeFiles/DiceThrower.dir/src/gui/DiceApp.cpp.s
+
 CMakeFiles/DiceThrower.dir/external/imgui/imgui.cpp.o: CMakeFiles/DiceThrower.dir/flags.make
 CMakeFiles/DiceThrower.dir/external/imgui/imgui.cpp.o: /home/leonardo/Scrivania/dice-roller-simulator/external/imgui/imgui.cpp
 CMakeFiles/DiceThrower.dir/external/imgui/imgui.cpp.o: CMakeFiles/DiceThrower.dir/compiler_depend.ts
-	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=/home/leonardo/Scrivania/dice-roller-simulator/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_3) "Building CXX object CMakeFiles/DiceThrower.dir/external/imgui/imgui.cpp.o"
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=/home/leonardo/Scrivania/dice-roller-simulator/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_4) "Building CXX object CMakeFiles/DiceThrower.dir/external/imgui/imgui.cpp.o"
 	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -MD -MT CMakeFiles/DiceThrower.dir/external/imgui/imgui.cpp.o -MF CMakeFiles/DiceThrower.dir/external/imgui/imgui.cpp.o.d -o CMakeFiles/DiceThrower.dir/external/imgui/imgui.cpp.o -c /home/leonardo/Scrivania/dice-roller-simulator/external/imgui/imgui.cpp
 
 CMakeFiles/DiceThrower.dir/external/imgui/imgui.cpp.i: cmake_force
@@ -114,7 +128,7 @@ CMakeFiles/DiceThrower.dir/external/imgui/imgui.cpp.s: cmake_force
 CMakeFiles/DiceThrower.dir/external/imgui/imgui_draw.cpp.o: CMakeFiles/DiceThrower.dir/flags.make
 CMakeFiles/DiceThrower.dir/external/imgui/imgui_draw.cpp.o: /home/leonardo/Scrivania/dice-roller-simulator/external/imgui/imgui_draw.cpp
 CMakeFiles/DiceThrower.dir/external/imgui/imgui_draw.cpp.o: CMakeFiles/DiceThrower.dir/compiler_depend.ts
-	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=/home/leonardo/Scrivania/dice-roller-simulator/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_4) "Building CXX object CMakeFiles/DiceThrower.dir/external/imgui/imgui_draw.cpp.o"
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=/home/leonardo/Scrivania/dice-roller-simulator/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_5) "Building CXX object CMakeFiles/DiceThrower.dir/external/imgui/imgui_draw.cpp.o"
 	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -MD -MT CMakeFiles/DiceThrower.dir/external/imgui/imgui_draw.cpp.o -MF CMakeFiles/DiceThrower.dir/external/imgui/imgui_draw.cpp.o.d -o CMakeFiles/DiceThrower.dir/external/imgui/imgui_draw.cpp.o -c /home/leonardo/Scrivania/dice-roller-simulator/external/imgui/imgui_draw.cpp
 
 CMakeFiles/DiceThrower.dir/external/imgui/imgui_draw.cpp.i: cmake_force
@@ -128,7 +142,7 @@ CMakeFiles/DiceThrower.dir/external/imgui/imgui_draw.cpp.s: cmake_force
 CMakeFiles/DiceThrower.dir/external/imgui/imgui_tables.cpp.o: CMakeFiles/DiceThrower.dir/flags.make
 CMakeFiles/DiceThrower.dir/external/imgui/imgui_tables.cpp.o: /home/leonardo/Scrivania/dice-roller-simulator/external/imgui/imgui_tables.cpp
 CMakeFiles/DiceThrower.dir/external/imgui/imgui_tables.cpp.o: CMakeFiles/DiceThrower.dir/compiler_depend.ts
-	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=/home/leonardo/Scrivania/dice-roller-simulator/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_5) "Building CXX object CMakeFiles/DiceThrower.dir/external/imgui/imgui_tables.cpp.o"
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=/home/leonardo/Scrivania/dice-roller-simulator/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_6) "Building CXX object CMakeFiles/DiceThrower.dir/external/imgui/imgui_tables.cpp.o"
 	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -MD -MT CMakeFiles/DiceThrower.dir/external/imgui/imgui_tables.cpp.o -MF CMakeFiles/DiceThrower.dir/external/imgui/imgui_tables.cpp.o.d -o CMakeFiles/DiceThrower.dir/external/imgui/imgui_tables.cpp.o -c /home/leonardo/Scrivania/dice-roller-simulator/external/imgui/imgui_tables.cpp
 
 CMakeFiles/DiceThrower.dir/external/imgui/imgui_tables.cpp.i: cmake_force
@@ -142,7 +156,7 @@ CMakeFiles/DiceThrower.dir/external/imgui/imgui_tables.cpp.s: cmake_force
 CMakeFiles/DiceThrower.dir/external/imgui/imgui_widgets.cpp.o: CMakeFiles/DiceThrower.dir/flags.make
 CMakeFiles/DiceThrower.dir/external/imgui/imgui_widgets.cpp.o: /home/leonardo/Scrivania/dice-roller-simulator/external/imgui/imgui_widgets.cpp
 CMakeFiles/DiceThrower.dir/external/imgui/imgui_widgets.cpp.o: CMakeFiles/DiceThrower.dir/compiler_depend.ts
-	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=/home/leonardo/Scrivania/dice-roller-simulator/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_6) "Building CXX object CMakeFiles/DiceThrower.dir/external/imgui/imgui_widgets.cpp.o"
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=/home/leonardo/Scrivania/dice-roller-simulator/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_7) "Building CXX object CMakeFiles/DiceThrower.dir/external/imgui/imgui_widgets.cpp.o"
 	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -MD -MT CMakeFiles/DiceThrower.dir/external/imgui/imgui_widgets.cpp.o -MF CMakeFiles/DiceThrower.dir/external/imgui/imgui_widgets.cpp.o.d -o CMakeFiles/DiceThrower.dir/external/imgui/imgui_widgets.cpp.o -c /home/leonardo/Scrivania/dice-roller-simulator/external/imgui/imgui_widgets.cpp
 
 CMakeFiles/DiceThrower.dir/external/imgui/imgui_widgets.cpp.i: cmake_force
@@ -156,7 +170,7 @@ CMakeFiles/DiceThrower.dir/external/imgui/imgui_widgets.cpp.s: cmake_force
 CMakeFiles/DiceThrower.dir/external/imgui/imgui_impl_glfw.cpp.o: CMakeFiles/DiceThrower.dir/flags.make
 CMakeFiles/DiceThrower.dir/external/imgui/imgui_impl_glfw.cpp.o: /home/leonardo/Scrivania/dice-roller-simulator/external/imgui/imgui_impl_glfw.cpp
 CMakeFiles/DiceThrower.dir/external/imgui/imgui_impl_glfw.cpp.o: CMakeFiles/DiceThrower.dir/compiler_depend.ts
-	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=/home/leonardo/Scrivania/dice-roller-simulator/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_7) "Building CXX object CMakeFiles/DiceThrower.dir/external/imgui/imgui_impl_glfw.cpp.o"
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=/home/leonardo/Scrivania/dice-roller-simulator/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_8) "Building CXX object CMakeFiles/DiceThrower.dir/external/imgui/imgui_impl_glfw.cpp.o"
 	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -MD -MT CMakeFiles/DiceThrower.dir/external/imgui/imgui_impl_glfw.cpp.o -MF CMakeFiles/DiceThrower.dir/external/imgui/imgui_impl_glfw.cpp.o.d -o CMakeFiles/DiceThrower.dir/external/imgui/imgui_impl_glfw.cpp.o -c /home/leonardo/Scrivania/dice-roller-simulator/external/imgui/imgui_impl_glfw.cpp
 
 CMakeFiles/DiceThrower.dir/external/imgui/imgui_impl_glfw.cpp.i: cmake_force
@@ -170,7 +184,7 @@ CMakeFiles/DiceThrower.dir/external/imgui/imgui_impl_glfw.cpp.s: cmake_force
 CMakeFiles/DiceThrower.dir/external/imgui/imgui_impl_opengl3.cpp.o: CMakeFiles/DiceThrower.dir/flags.make
 CMakeFiles/DiceThrower.dir/external/imgui/imgui_impl_opengl3.cpp.o: /home/leonardo/Scrivania/dice-roller-simulator/external/imgui/imgui_impl_opengl3.cpp
 CMakeFiles/DiceThrower.dir/external/imgui/imgui_impl_opengl3.cpp.o: CMakeFiles/DiceThrower.dir/compiler_depend.ts
-	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=/home/leonardo/Scrivania/dice-roller-simulator/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_8) "Building CXX object CMakeFiles/DiceThrower.dir/external/imgui/imgui_impl_opengl3.cpp.o"
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=/home/leonardo/Scrivania/dice-roller-simulator/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_9) "Building CXX object CMakeFiles/DiceThrower.dir/external/imgui/imgui_impl_opengl3.cpp.o"
 	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -MD -MT CMakeFiles/DiceThrower.dir/external/imgui/imgui_impl_opengl3.cpp.o -MF CMakeFiles/DiceThrower.dir/external/imgui/imgui_impl_opengl3.cpp.o.d -o CMakeFiles/DiceThrower.dir/external/imgui/imgui_impl_opengl3.cpp.o -c /home/leonardo/Scrivania/dice-roller-simulator/external/imgui/imgui_impl_opengl3.cpp
 
 CMakeFiles/DiceThrower.dir/external/imgui/imgui_impl_opengl3.cpp.i: cmake_force
@@ -181,34 +195,68 @@ CMakeFiles/DiceThrower.dir/external/imgui/imgui_impl_opengl3.cpp.s: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green "Compiling CXX source to assembly CMakeFiles/DiceThrower.dir/external/imgui/imgui_impl_opengl3.cpp.s"
 	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /home/leonardo/Scrivania/dice-roller-simulator/external/imgui/imgui_impl_opengl3.cpp -o CMakeFiles/DiceThrower.dir/external/imgui/imgui_impl_opengl3.cpp.s
 
+CMakeFiles/DiceThrower.dir/external/implot/implot.cpp.o: CMakeFiles/DiceThrower.dir/flags.make
+CMakeFiles/DiceThrower.dir/external/implot/implot.cpp.o: /home/leonardo/Scrivania/dice-roller-simulator/external/implot/implot.cpp
+CMakeFiles/DiceThrower.dir/external/implot/implot.cpp.o: CMakeFiles/DiceThrower.dir/compiler_depend.ts
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=/home/leonardo/Scrivania/dice-roller-simulator/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_10) "Building CXX object CMakeFiles/DiceThrower.dir/external/implot/implot.cpp.o"
+	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -MD -MT CMakeFiles/DiceThrower.dir/external/implot/implot.cpp.o -MF CMakeFiles/DiceThrower.dir/external/implot/implot.cpp.o.d -o CMakeFiles/DiceThrower.dir/external/implot/implot.cpp.o -c /home/leonardo/Scrivania/dice-roller-simulator/external/implot/implot.cpp
+
+CMakeFiles/DiceThrower.dir/external/implot/implot.cpp.i: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green "Preprocessing CXX source to CMakeFiles/DiceThrower.dir/external/implot/implot.cpp.i"
+	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /home/leonardo/Scrivania/dice-roller-simulator/external/implot/implot.cpp > CMakeFiles/DiceThrower.dir/external/implot/implot.cpp.i
+
+CMakeFiles/DiceThrower.dir/external/implot/implot.cpp.s: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green "Compiling CXX source to assembly CMakeFiles/DiceThrower.dir/external/implot/implot.cpp.s"
+	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /home/leonardo/Scrivania/dice-roller-simulator/external/implot/implot.cpp -o CMakeFiles/DiceThrower.dir/external/implot/implot.cpp.s
+
+CMakeFiles/DiceThrower.dir/external/implot/implot_items.cpp.o: CMakeFiles/DiceThrower.dir/flags.make
+CMakeFiles/DiceThrower.dir/external/implot/implot_items.cpp.o: /home/leonardo/Scrivania/dice-roller-simulator/external/implot/implot_items.cpp
+CMakeFiles/DiceThrower.dir/external/implot/implot_items.cpp.o: CMakeFiles/DiceThrower.dir/compiler_depend.ts
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=/home/leonardo/Scrivania/dice-roller-simulator/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_11) "Building CXX object CMakeFiles/DiceThrower.dir/external/implot/implot_items.cpp.o"
+	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -MD -MT CMakeFiles/DiceThrower.dir/external/implot/implot_items.cpp.o -MF CMakeFiles/DiceThrower.dir/external/implot/implot_items.cpp.o.d -o CMakeFiles/DiceThrower.dir/external/implot/implot_items.cpp.o -c /home/leonardo/Scrivania/dice-roller-simulator/external/implot/implot_items.cpp
+
+CMakeFiles/DiceThrower.dir/external/implot/implot_items.cpp.i: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green "Preprocessing CXX source to CMakeFiles/DiceThrower.dir/external/implot/implot_items.cpp.i"
+	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /home/leonardo/Scrivania/dice-roller-simulator/external/implot/implot_items.cpp > CMakeFiles/DiceThrower.dir/external/implot/implot_items.cpp.i
+
+CMakeFiles/DiceThrower.dir/external/implot/implot_items.cpp.s: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green "Compiling CXX source to assembly CMakeFiles/DiceThrower.dir/external/implot/implot_items.cpp.s"
+	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /home/leonardo/Scrivania/dice-roller-simulator/external/implot/implot_items.cpp -o CMakeFiles/DiceThrower.dir/external/implot/implot_items.cpp.s
+
 # Object files for target DiceThrower
 DiceThrower_OBJECTS = \
 "CMakeFiles/DiceThrower.dir/main.cpp.o" \
 "CMakeFiles/DiceThrower.dir/src/math/DiceMath.cpp.o" \
+"CMakeFiles/DiceThrower.dir/src/gui/DiceApp.cpp.o" \
 "CMakeFiles/DiceThrower.dir/external/imgui/imgui.cpp.o" \
 "CMakeFiles/DiceThrower.dir/external/imgui/imgui_draw.cpp.o" \
 "CMakeFiles/DiceThrower.dir/external/imgui/imgui_tables.cpp.o" \
 "CMakeFiles/DiceThrower.dir/external/imgui/imgui_widgets.cpp.o" \
 "CMakeFiles/DiceThrower.dir/external/imgui/imgui_impl_glfw.cpp.o" \
-"CMakeFiles/DiceThrower.dir/external/imgui/imgui_impl_opengl3.cpp.o"
+"CMakeFiles/DiceThrower.dir/external/imgui/imgui_impl_opengl3.cpp.o" \
+"CMakeFiles/DiceThrower.dir/external/implot/implot.cpp.o" \
+"CMakeFiles/DiceThrower.dir/external/implot/implot_items.cpp.o"
 
 # External object files for target DiceThrower
 DiceThrower_EXTERNAL_OBJECTS =
 
 DiceThrower: CMakeFiles/DiceThrower.dir/main.cpp.o
 DiceThrower: CMakeFiles/DiceThrower.dir/src/math/DiceMath.cpp.o
+DiceThrower: CMakeFiles/DiceThrower.dir/src/gui/DiceApp.cpp.o
 DiceThrower: CMakeFiles/DiceThrower.dir/external/imgui/imgui.cpp.o
 DiceThrower: CMakeFiles/DiceThrower.dir/external/imgui/imgui_draw.cpp.o
 DiceThrower: CMakeFiles/DiceThrower.dir/external/imgui/imgui_tables.cpp.o
 DiceThrower: CMakeFiles/DiceThrower.dir/external/imgui/imgui_widgets.cpp.o
 DiceThrower: CMakeFiles/DiceThrower.dir/external/imgui/imgui_impl_glfw.cpp.o
 DiceThrower: CMakeFiles/DiceThrower.dir/external/imgui/imgui_impl_opengl3.cpp.o
+DiceThrower: CMakeFiles/DiceThrower.dir/external/implot/implot.cpp.o
+DiceThrower: CMakeFiles/DiceThrower.dir/external/implot/implot_items.cpp.o
 DiceThrower: CMakeFiles/DiceThrower.dir/build.make
 DiceThrower: /usr/lib/x86_64-linux-gnu/libglfw.so.3.3
 DiceThrower: /usr/lib/x86_64-linux-gnu/libGLX.so
 DiceThrower: /usr/lib/x86_64-linux-gnu/libOpenGL.so
 DiceThrower: CMakeFiles/DiceThrower.dir/link.txt
-	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --bold --progress-dir=/home/leonardo/Scrivania/dice-roller-simulator/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_9) "Linking CXX executable DiceThrower"
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --bold --progress-dir=/home/leonardo/Scrivania/dice-roller-simulator/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_12) "Linking CXX executable DiceThrower"
 	$(CMAKE_COMMAND) -E cmake_link_script CMakeFiles/DiceThrower.dir/link.txt --verbose=$(VERBOSE)
 
 # Rule to build all files generated by this target.

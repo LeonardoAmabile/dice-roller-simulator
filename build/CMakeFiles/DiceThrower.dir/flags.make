@@ -4,7 +4,7 @@
 # compile CXX with /usr/bin/c++
 CXX_DEFINES = 
 
-CXX_INCLUDES = -I/home/leonardo/Scrivania/dice-roller-simulator/external/imgui
+CXX_INCLUDES = -I/home/leonardo/Scrivania/dice-roller-simulator/external/imgui -I/home/leonardo/Scrivania/dice-roller-simulator/external/implot
 
 CXX_FLAGS = -std=gnu++17
 

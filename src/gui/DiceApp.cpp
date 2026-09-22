@@ -135,26 +135,70 @@ void DiceApp::renderUI() {
         }
         ImGui::PopItemWidth();
 
-        // --- RIGHT COLUMN: QUICK ADD BUTTONS ---
+        // --- RIGHT COLUMN: QUICK ROLLER ---
         ImGui::TableNextColumn();
-        ImGui::TextColored(ImVec4(0.4f, 0.8f, 1.0f, 1.0f), "Quick Add (+1 Dice)");
+        ImGui::TextColored(ImVec4(0.4f, 0.8f, 1.0f, 1.0f), "Quick Roller (Single Die)");
         ImGui::Spacing();
+        
+        // Radio buttons for Advantage/Disadvantage
+        ImGui::RadioButton("Normal", &quickAdvantageState, 0); ImGui::SameLine();
+        ImGui::RadioButton("Adv.", &quickAdvantageState, 1); ImGui::SameLine();
+        ImGui::RadioButton("Disadv.", &quickAdvantageState, 2);
+        
+        ImGui::Spacing();
+        
+        // Independent Modifier
+        ImGui::PushItemWidth(80);
+        ImGui::InputInt("Mod", &quickModifier);
+        ImGui::PopItemWidth();
+        
+        ImGui::Spacing();
+        
+        // Internal Lambda Function for Quick Rolls
+        auto doQuickRoll = [&](int faces) {
+            DicePool singleDie;
+            singleDie.addDices(1, faces);
+            
+            int r1 = singleDie.rollTotal(mainRoller).total;
+            int r2 = (quickAdvantageState != 0) ? singleDie.rollTotal(mainRoller).total : 0;
+            
+            int finalBase = r1;
+            std::string rollStr = "[" + std::to_string(r1) + "]";
+            
+            if (quickAdvantageState == 1) { // Advantage
+                finalBase = std::max(r1, r2);
+                rollStr = "[" + std::to_string(r1) + ", " + std::to_string(r2) + "] (Keep High)";
+            } else if (quickAdvantageState == 2) { // Disadvantage
+                finalBase = std::min(r1, r2);
+                rollStr = "[" + std::to_string(r1) + ", " + std::to_string(r2) + "] (Keep Low)";
+            }
+            
+            int finalTotal = finalBase + quickModifier;
+            std::string sign = (quickModifier >= 0) ? "+" : "";
+            
+            std::string logEntry = "Quick Roll (d" + std::to_string(faces) + "): " + 
+                                   rollStr + " " + sign + std::to_string(quickModifier) + 
+                                   "  ->  TOTAL: " + std::to_string(finalTotal);
+                                   
+            rollHistory.push_back(logEntry);
+            hasRolled = true; // Trigger auto-scroll
+        };
         
         // Define uniform button size
         ImVec2 btnSize(65, 40);
         
         // First row of standard dice
-        if (ImGui::Button("d4", btnSize)) attackRoll.addDices(1, 4); ImGui::SameLine();
-        if (ImGui::Button("d6", btnSize)) attackRoll.addDices(1, 6); ImGui::SameLine();
-        if (ImGui::Button("d8", btnSize)) attackRoll.addDices(1, 8); ImGui::SameLine();
-        if (ImGui::Button("d10", btnSize)) attackRoll.addDices(1, 10);
+        if (ImGui::Button("d4", btnSize)) doQuickRoll(4); ImGui::SameLine();
+        if (ImGui::Button("d6", btnSize)) doQuickRoll(6); ImGui::SameLine();
+        if (ImGui::Button("d8", btnSize)) doQuickRoll(8); ImGui::SameLine();
+        if (ImGui::Button("d10", btnSize)) doQuickRoll(10);
         
         ImGui::Spacing(); // Moves to the next line of buttons
         
         // Second row of standard dice
-        if (ImGui::Button("d12", btnSize)) attackRoll.addDices(1, 12); ImGui::SameLine();
-        if (ImGui::Button("d20", btnSize)) attackRoll.addDices(1, 20); ImGui::SameLine();
-        if (ImGui::Button("d100", btnSize)) attackRoll.addDices(1, 100);
+        if (ImGui::Button("d12", btnSize)) doQuickRoll(12); ImGui::SameLine();
+        if (ImGui::Button("d20", btnSize)) doQuickRoll(20); ImGui::SameLine();
+        if (ImGui::Button("d100", btnSize)) doQuickRoll(100);
 
         ImGui::EndTable();
     }

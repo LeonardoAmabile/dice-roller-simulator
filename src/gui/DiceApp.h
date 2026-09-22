@@ -21,6 +21,10 @@ private:
     //Defies the chronology
     std::vector<std::string> rollHistory;
     
+    // --- New Variables QUICK ROLLER ---
+    int quickAdvantageState = 0; // 0: Normal, 1: Advantage, 2: Disadvantage
+    int quickModifier = 0;
+    
     // Metodi privati interni
     void renderUI(); 
 

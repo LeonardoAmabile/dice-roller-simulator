@@ -17,7 +17,10 @@ private:
     int inputModifier = 0;
     RollResult lastRoll;
     bool hasRolled = false;
-
+    
+    //Defies the chronology
+    std::vector<std::string> rollHistory;
+    
     // Metodi privati interni
     void renderUI(); 
 

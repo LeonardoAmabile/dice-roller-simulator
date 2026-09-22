@@ -13,7 +13,7 @@ DiceApp::DiceApp(int w, int h, const std::string& t)
     : window(nullptr), width(w), height(h), title(t) {}
 
 DiceApp::~DiceApp() {
-    // FASE 4: CLEANUP (Eseguito in automatico alla chiusura)
+    // PHASE 4: CLEANUP (Executed automatically on close)
     ImGui_ImplOpenGL3_Shutdown();
     ImGui_ImplGlfw_Shutdown();
     ImPlot::DestroyContext();
@@ -26,7 +26,7 @@ DiceApp::~DiceApp() {
 }
 
 bool DiceApp::initialize() {
-    // FASE 1: SETUP E INIZIALIZZAZIONE
+    // PHASE 1: SETUP AND INITIALIZATION
     glfwSetErrorCallback(glfw_error_callback);
     if (!glfwInit()) return false;
 
@@ -44,10 +44,11 @@ bool DiceApp::initialize() {
     ImGui::CreateContext();
     ImPlot::CreateContext();
     ImGuiIO& io = ImGui::GetIO(); (void)io;
+    io.IniFilename = nullptr; // Deactivate the creation of .ini file
     
     ImGui::StyleColorsDark();
     
-    // Stile arrotondato
+    // Rounded style
     ImGuiStyle& style = ImGui::GetStyle();
     style.WindowRounding = 8.0f;
     style.FrameRounding = 6.0f;
@@ -60,7 +61,7 @@ bool DiceApp::initialize() {
 }
 
 void DiceApp::run() {
-    // FASE 3: LOOP GRAFICO
+    // PHASE 3: GRAPHIC LOOP
     while (!glfwWindowShouldClose(window)) {
         glfwPollEvents();
 
@@ -68,7 +69,7 @@ void DiceApp::run() {
         ImGui_ImplGlfw_NewFrame();
         ImGui::NewFrame();
 
-        renderUI(); // Disegna l'interfaccia
+        renderUI(); // Draw the interface
 
         ImGui::Render();
         int display_w, display_h;
@@ -83,7 +84,7 @@ void DiceApp::run() {
 }
 
 void DiceApp::renderUI() {
-    // Layout a schermo intero
+    // Fullscreen layout
     const ImGuiViewport* viewport = ImGui::GetMainViewport();
     ImGui::SetNextWindowPos(viewport->WorkPos);
     ImGui::SetNextWindowSize(viewport->WorkSize);
@@ -95,34 +96,70 @@ void DiceApp::renderUI() {
 
     ImGui::Begin("Dice Builder", nullptr, window_flags); 
     
-    ImGui::Text("1. Build your formula");
-    ImGui::TextColored(ImVec4(1.0f, 0.8f, 0.0f, 1.0f), "Formula: %s", attackRoll.getFormulaText().c_str());
+    // --- TOP SECTION: 2-COLUMN INVISIBLE TABLE ---
+    if (ImGui::BeginTable("TopSection", 2, ImGuiTableFlags_None)) {
+        // Setup columns: Left takes remaining space, Right is fixed to 320 pixels
+        ImGui::TableSetupColumn("Left", ImGuiTableColumnFlags_WidthStretch);
+        ImGui::TableSetupColumn("Right", ImGuiTableColumnFlags_WidthFixed, 320.0f);
+        ImGui::TableNextRow();
+        
+        // --- LEFT COLUMN: MANUAL FORMULA ---
+        ImGui::TableNextColumn();
+        ImGui::Text("1. Build your formula");
+        ImGui::TextColored(ImVec4(1.0f, 0.8f, 0.0f, 1.0f), "Formula: %s", attackRoll.getFormulaText().c_str());
+        ImGui::Spacing();
+
+        ImGui::PushItemWidth(100); 
+        ImGui::InputInt("Quantity", &inputQuantity);
+        ImGui::SameLine(); 
+        ImGui::InputInt("Faces", &inputFaces);
+        ImGui::PopItemWidth(); 
+
+        if (inputQuantity < 1) inputQuantity = 1;
+        if (inputFaces < 2) inputFaces = 2;
+
+        if (ImGui::Button("Add Custom", ImVec2(120, 30))) {
+            attackRoll.addDices(inputQuantity, inputFaces);
+        }
+        ImGui::SameLine();
+        if (ImGui::Button("Clear Pool", ImVec2(120, 30))) {
+            attackRoll.clear();
+            attackRoll.setModifier(inputModifier);
+            hasRolled = false;
+        }
+
+        ImGui::Spacing();
+        ImGui::PushItemWidth(100);
+        if (ImGui::InputInt("Total Modifier", &inputModifier)) {
+            attackRoll.setModifier(inputModifier);
+        }
+        ImGui::PopItemWidth();
+
+        // --- RIGHT COLUMN: QUICK ADD BUTTONS ---
+        ImGui::TableNextColumn();
+        ImGui::TextColored(ImVec4(0.4f, 0.8f, 1.0f, 1.0f), "Quick Add (+1 Dice)");
+        ImGui::Spacing();
+        
+        // Define uniform button size
+        ImVec2 btnSize(65, 40);
+        
+        // First row of standard dice
+        if (ImGui::Button("d4", btnSize)) attackRoll.addDices(1, 4); ImGui::SameLine();
+        if (ImGui::Button("d6", btnSize)) attackRoll.addDices(1, 6); ImGui::SameLine();
+        if (ImGui::Button("d8", btnSize)) attackRoll.addDices(1, 8); ImGui::SameLine();
+        if (ImGui::Button("d10", btnSize)) attackRoll.addDices(1, 10);
+        
+        ImGui::Spacing(); // Moves to the next line of buttons
+        
+        // Second row of standard dice
+        if (ImGui::Button("d12", btnSize)) attackRoll.addDices(1, 12); ImGui::SameLine();
+        if (ImGui::Button("d20", btnSize)) attackRoll.addDices(1, 20); ImGui::SameLine();
+        if (ImGui::Button("d100", btnSize)) attackRoll.addDices(1, 100);
+
+        ImGui::EndTable();
+    }
+    
     ImGui::Spacing();
-
-    ImGui::PushItemWidth(100); 
-    ImGui::InputInt("Quantity", &inputQuantity);
-    ImGui::SameLine(); 
-    ImGui::InputInt("Faces", &inputFaces);
-    ImGui::PopItemWidth(); 
-
-    if (inputQuantity < 1) inputQuantity = 1;
-    if (inputFaces < 2) inputFaces = 2;
-
-    if (ImGui::Button("Add Dice", ImVec2(120, 30))) {
-        attackRoll.addDices(inputQuantity, inputFaces);
-    }
-    ImGui::SameLine();
-    if (ImGui::Button("Clear Pool", ImVec2(120, 30))) {
-        attackRoll.clear();
-        attackRoll.setModifier(inputModifier);
-        hasRolled = false;
-    }
-
-    ImGui::Spacing();
-    if (ImGui::InputInt("Total Modifier", &inputModifier)) {
-        attackRoll.setModifier(inputModifier);
-    }
-
     ImGui::Separator();
     ImGui::Text("2. Analysis & Roll");
     ImGui::Spacing();
@@ -131,7 +168,7 @@ void DiceApp::renderUI() {
     ImGui::Text("Standard Deviation: %.2f", attackRoll.getStandardDeviation());
     ImGui::Spacing();
 
-    // Grafico ImPlot
+    // ImPlot Graph
     Distribution dist = attackRoll.getExactDistribution();
     std::vector<double> x_data, y_data;
     for (size_t i = 0; i < dist.probabilities.size(); ++i) {
@@ -150,21 +187,41 @@ void DiceApp::renderUI() {
 
     ImGui::Spacing();
 
+    // Roll Button & Log Generation
     if (ImGui::Button("Roll Dice!", ImVec2(200, 50))) {
         lastRoll = attackRoll.rollTotal(mainRoller);
-        hasRolled = true;
+        
+        // Build the log string
+        std::string logEntry = "Formula: " + attackRoll.getFormulaText() + "  ->  Rolls: ";
+        for (int r : lastRoll.individualRolls) {
+            logEntry += "[" + std::to_string(r) + "] ";
+        }
+        logEntry += " ->  TOTAL: " + std::to_string(lastRoll.total);
+        
+        // Add to history vector
+        rollHistory.push_back(logEntry);
+        hasRolled = true; // Trigger auto-scroll
     }
 
-    if (hasRolled) {
-        ImGui::Spacing();
-        ImGui::Text("Individual Rolls: ");
-        for (size_t i = 0; i < lastRoll.individualRolls.size(); ++i) {
-            ImGui::SameLine();
-            ImGui::Text("[%d]", lastRoll.individualRolls[i]);
+    ImGui::Spacing();
+    ImGui::Separator();
+    ImGui::Text("Roll History");
+
+    // Scrollable History Area
+    if (ImGui::BeginChild("HistoryRegion", ImVec2(0, 0), true)) {
+        
+        // Print all past rolls
+        for (const auto& log : rollHistory) {
+            ImGui::TextUnformatted(log.c_str());
         }
-        ImGui::Spacing();
-        ImGui::TextColored(ImVec4(0.2f, 1.0f, 0.2f, 1.0f), "TOTAL: %d", lastRoll.total);
+        
+        // Auto-scroll to bottom on new roll
+        if (hasRolled) {
+            ImGui::SetScrollHereY(1.0f);
+            hasRolled = false;
+        }
     }
+    ImGui::EndChild();
 
     ImGui::End();
 }

@@ -27,21 +27,27 @@ The application is built with a strict Model-View architecture, ensuring a highl
 
 ---
 
-## Dependencies and Prerequisites
+## Dependencies and Requirements
 
-The project already includes the `ImGui` and `ImPlot` libraries internally (in the `external/` folder), so they do not require separate installation.
+To build and run **Dice Roller Studio**, your system must meet the following requirements:
 
-To compile the project on **Linux (Debian/Ubuntu)**, ensure you have a C++ compiler, CMake, and the system libraries for GLFW and OpenGL installed:
+* **Compiler:** Any C++ compiler supporting **C++17** (e.g., GCC, Clang, MSVC).
+* **Build System:** **CMake** (version 3.10 or higher).
+* **System Libraries:** **GLFW3** and **OpenGL 3** for window management and rendering.
+* **Internal Libraries:** **Dear ImGui** and **ImPlot** (Already bundled in the `external/` folder, no separate installation required).
 
+### Linux (Debian/Ubuntu)
+You can install all necessary system dependencies and build tools with a single command:
 ```bash
 sudo apt update
 sudo apt install build-essential cmake libglfw3-dev libgl1-mesa-dev
 
-```
-
 *(Note: The code is natively compatible with Windows and macOS, provided CMake and GLFW are installed via their respective package managers like vcpkg or Homebrew).*
 
----
+```
+
+### Windows /  macOS
+Ensure you have a modern C++ compiler and CMake installed. You will also need to provide the GLFW library using your preferred package manager (such as vcpkg for Windows or brew install glfw for macOS).
 
 ## How to Build and Run
 
@@ -90,6 +96,3 @@ If the terminal outputs `SUCCESS!`, all probability distributions, expected valu
 * `external/`: Contains third-party source files (Dear ImGui and ImPlot).
 * `main.cpp`: A minimal, clean entry point that simply initializes and runs the `DiceApp`.
 
-```
-
-```

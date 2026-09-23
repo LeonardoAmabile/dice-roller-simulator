@@ -1,4 +1,0 @@
-/home/leonardo/Scrivania/dice-roller-simulator/build/CMakeFiles/DiceThrower.dir
-/home/leonardo/Scrivania/dice-roller-simulator/build/CMakeFiles/TestDiceThrower.dir
-/home/leonardo/Scrivania/dice-roller-simulator/build/CMakeFiles/edit_cache.dir
-/home/leonardo/Scrivania/dice-roller-simulator/build/CMakeFiles/rebuild_cache.dir

@@ -25,7 +25,7 @@ struct DiceGroup {
     int faces;
 };
 
-// --- NUOVA STRUCT PER I RISULTATI ---
+// Struct for a roll result
 struct RollResult {
     int total;
     std::vector<int> individualRolls;
